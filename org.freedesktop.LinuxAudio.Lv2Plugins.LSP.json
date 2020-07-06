@@ -42,6 +42,7 @@
             },
             "install-rule": "install_lv2",
             "post-install": [
+                "strip ${FLATPAK_DEST}/lv2/*.lv2/*.so",
                 "install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo org.freedesktop.LinuxAudio.Lv2Plugins.LSP.metainfo.xml",
                 "appstream-compose --basename=org.freedesktop.LinuxAudio.Lv2Plugins.LSP --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.LinuxAudio.Lv2Plugins.LSP",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/lsp LICENSE.txt"
